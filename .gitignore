@@ -1,0 +1,19 @@
+# The dataset must never be committed: every image stays in ~/MSDS565_data, outside the repo
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.gif
+*.npy
+*.npz
+P2_images/
+P2_processed/
+
+# Python and notebook clutter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
+Thumbs.db
