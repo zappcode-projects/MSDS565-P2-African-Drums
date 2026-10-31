@@ -1,0 +1,9 @@
+tensorflow-cpu
+keras>=3
+streamlit
+altair
+pandas
+numpy
+pillow
+matplotlib
+packaging
