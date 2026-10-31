@@ -59,13 +59,13 @@ Three pretrained Keras applications, each with the same single-layer linear prob
 
 | Application | Size | Parameters | Test accuracy | Macro-F1 |
 |---|---|---:|---:|---:|
-| MobileNetV2 | small | 2.3 M | 0.76 | 0.755 |
-| ResNet50 | medium | 23.6 M | 0.79 | 0.785 |
-| EfficientNetV2M | large | 53.2 M | 0.76 | 0.755 |
+| MobileNetV2 | small | 2.3 M | 0.733 | 0.729 |
+| ResNet50 | medium | 23.6 M | 0.746 | 0.746 |
+| EfficientNetV2M | large | 53.2 M | 0.710 | 0.707 |
 
-A larger model did not buy accuracy on this dataset: the medium model was about 3 points better than the small one, and the large model, at 24 times the parameters and more than five times the embedding time, was no better than the small one. Differences of a few points are within the noise of a test set this size.
+A larger model did not buy accuracy on this dataset: the medium model was only 1.3 points better than the small one, and the large model, at 24 times the parameters and almost six times the embedding time, was 2.2 points worse. With 449 test images, one point is about 4.5 images, so differences of a few points are within the noise of a test set this size.
 
-[TEAM: add two or three sentences from Notebook 4: the weakest classes, whether you found a shortcut and how much the ablation moved accuracy, and what you would fix first.]
+The weakest classes are sabar and bata in all three applications (recall 0.52 to 0.59), and the most-confused pairs are bata / sabar and sabar / talking_drum. We did not find a strong shortcut: padding alone predicts the class at 17.8% (random guessing is 12.5%), greying the outer border costs only 2 to 4 points, and greying the region Grad-CAM points at costs about 40 points for MobileNetV2 and ResNet50 against 13 to 15 for a random square. Two weaker warning signs remain: EfficientNetV2M leans more on the edge of the picture (27.6% accuracy with the centre greyed, against 16.0% for MobileNetV2), and accuracy is 6 to 11 points lower on photos from websites unseen for that class. The first thing we would fix is the sabar and bata data, by removing drawings, posters, crowds and pictures with several kinds of drum.
 
 ## 5. Run the Streamlit app
 
