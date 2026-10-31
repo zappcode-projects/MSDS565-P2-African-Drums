@@ -2,7 +2,7 @@
 
 MSDS 565, Project 2 (Unit 2, image data). We scraped our own photo dataset of eight traditional African drums, cleaned it, compared three pretrained Keras applications of different sizes with transfer learning, explained what the models look at with saliency maps and Grad-CAM, and deployed all three in a Streamlit app.
 
-**Team:** [TEAM NAME] &middot; [MEMBER NAMES]
+**Team:** DataStars &middot; Antonio Brown, Justin Irick, India Scruggs, Michael Flanders
 
 ## 1. Classes and why we chose them
 
@@ -19,7 +19,7 @@ MSDS 565, Project 2 (Unit 2, image data). We scraped our own photo dataset of ei
 
 We chose eight classes that can be told apart by **shape** (goblet, hourglass, cylinder, cone, flat frame) and checked beforehand that each could supply at least 200 distinct, correctly labeled photographs. Several are deliberately close pairs (`djembe` and `ashiko`, `dunun` and `talking_drum`), which makes the classification and the explanations informative.
 
-[TEAM: add one or two sentences on why drums, and on the class you expected to be hardest.]
+We chose drums because there are many classifications of drums (more than 8 different classifications), and the image types can range from being simple to extremely complex. 
 
 ## 2. How the dataset was built
 
@@ -36,7 +36,7 @@ Images were scraped with the course's `ddgs_scraper.py` (the Bing backend), thre
 | `sabar` | traditional Senegalese sabar drum &middot; Wolof sabar wooden drum &middot; Senegal sabar drum full view |
 | `talking_drum` | African talking drum hourglass &middot; Yoruba dundun talking drum &middot; West African talking drum tension cords |
 
-After scraping, the team removed wrong subjects by hand (photos of other instruments, people without a visible drum, collages), then Notebook 2 removed unreadable files and duplicates. [TEAM: add the final per-class image counts and the number removed.]
+After scraping, the team removed wrong subjects by hand (photos of other instruments, people without a visible drum, collages), then Notebook 2 removed unreadable files and duplicates. 
 
 **No images are in this repository.** The scraped photos, the cleaned images and the preprocessed arrays live in a local folder outside the repo (`~/MSDS565_data/`). `data/P2_manifest.csv` is the record of the dataset: for every image, its class, the search term, the source page URL, and whether it was kept and which split it fell in.
 
